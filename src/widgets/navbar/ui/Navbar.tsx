@@ -6,6 +6,7 @@ import { classNames } from "shared/lib/classNames";
 //styles
 import cls from "./Navbar.module.scss";
 import { Applink, ApplinkTheme } from "shared/ui/AppLink/Applink";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
 
 interface Props {
   className?: string;
