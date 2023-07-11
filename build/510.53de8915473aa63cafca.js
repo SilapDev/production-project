@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktrain=self.webpackChunktrain||[]).push([[510],{510:(e,n,a)=>{a.r(n),a.d(n,{default:()=>r});var i=a(893);function r(){return(0,i.jsx)("div",{children:"MainPage"},void 0)}}}]);
