@@ -3,5 +3,11 @@
         "public/locales",
         "src/shared/config/i18n"
     ],
-    "i18n-ally.keystyle": "flat"
+    "i18n-ally.keystyle": "flat",
+    "stylelint.enable": true,
+    "css.validate": false,
+    "scss.validate": true,
+    "less.validate": false,
+    "stylelint.config": null,
+    "stylelint.validate": [ "css", "scss", "postcss" ]
 }
