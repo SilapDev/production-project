@@ -1,6 +1,6 @@
 
 // helpers
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from 'shared/lib/classNames/classNames'
 
 // styles
 import cls from './Navbar.module.scss'

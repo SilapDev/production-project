@@ -1,5 +1,5 @@
 import React, { type FC } from 'react'
-import { classNames } from 'shared/lib/classNames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Applink.module.scss'
 import { Link, type LinkProps } from 'react-router-dom'
 
@@ -24,7 +24,7 @@ export const Applink: FC<ApplinkProps> = (props) => {
   return (
       <Link
       to={to}
-      className={classNames(cls.Applink, {}, [className, cls[theme]])}
+      className={classNames(cls.Applink, {}, [className!, cls[theme]])}
       {...other}
     >
           {children}

@@ -26,7 +26,8 @@ module.exports = {
        "@typescript-eslint/no-unused-vars": "warn",
        "react/react-in-jsx-scope": "off",
        "@typescript-eslint/no-floating-promises" : "off",
-       "@typescript-eslint/strict-boolean-expressions" : "off" 
+       "@typescript-eslint/strict-boolean-expressions" : "off",
+       "@typescript-eslint/no-non-null-assertion" : "off", 
     },
     globals: {
         "__IS_DEV__" : true,

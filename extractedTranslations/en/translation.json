@@ -1,5 +1,8 @@
 {
+  "PageError": "PageError",
   "about": "about",
   "language": "language",
-  "main": "main"
+  "main": "main",
+  "pageNotFound": "pageNotFound",
+  "reloadPage": "reloadPage"
 }
