@@ -13,8 +13,9 @@ module.exports = {
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module",
-        "project": ["./tsconfig.json"]
+        "project": "./tsconfig.json"
     },
+    
     "plugins": [
         "react"
     ],
@@ -31,5 +32,13 @@ module.exports = {
     },
     globals: {
         "__IS_DEV__" : true,
-    }
+    },
+    overrides: [
+        {
+            files: ["**/src/**/*.test.{ts,tsx}"],
+            rules: {
+                "@typescript-eslint/no-non-null-assertion" : "off",
+            }  
+        }
+    ]
 }

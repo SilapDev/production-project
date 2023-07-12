@@ -1,1 +1,4 @@
 .eslintrc.js
+*.test.tsx
+config
+webpack.config.ts
