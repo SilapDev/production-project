@@ -1,5 +1,6 @@
 {
-  "language": "Английский",
+  "language": "Русский",
+  "shortLanguage": "Ru",
   "pageNotFound": "Страница не найдено",
   "PageError": "Произошла ошибка",
   "reloadPage": "Обновить страницу"
