@@ -1,7 +1,8 @@
 {
-    "language": "English",
-    "shortLanguage": "En",
-    "pageNotFound": "Page not found",
-    "PageError": "Something went wrong",
-    "reloadPage": "Reload the page"
+  "language": "English",
+  "shortLanguage": "En",
+  "pageNotFound": "Page not found",
+  "PageError": "Something went wrong",
+  "reloadPage": "Reload the page",
+  "signIn": "Sign in"
 }
