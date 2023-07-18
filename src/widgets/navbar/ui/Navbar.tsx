@@ -29,7 +29,7 @@ export const Navbar = ({ className }: Props) => {
       >
               {t('signIn')}
           </Button>
-          <Modal isOpen={isAuthModal} onClose={onToggleModal}></Modal>
+          <Modal isOpen={isAuthModal} onClose={onToggleModal}> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor! </Modal>
       </div>
   )
 }
