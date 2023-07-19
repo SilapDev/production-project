@@ -4,5 +4,7 @@
   "pageNotFound": "Page not found",
   "PageError": "Something went wrong",
   "reloadPage": "Reload the page",
-  "signIn": "Sign in"
+  "signIn": "Sign in",
+  "username": "Username",
+  "password": "Password"
 }

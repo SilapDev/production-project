@@ -1,7 +1,8 @@
-export interface CounterState {
-    value: number
-}
+import { CounterSchema } from "entities/Counter"
+import { Userschema } from "entities/User"
+
 
 export interface StateSchema {
-    counter: CounterState
+    counter: CounterSchema
+    user: Userschema
 }

@@ -4,6 +4,8 @@
   "language": "language",
   "main": "main",
   "pageNotFound": "pageNotFound",
+  "password": "password",
   "reloadPage": "reloadPage",
-  "signIn": "signIn"
+  "signIn": "signIn",
+  "username": "username"
 }
