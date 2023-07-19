@@ -2,3 +2,4 @@
 *.test.tsx
 config
 webpack.config.ts
+json-server
