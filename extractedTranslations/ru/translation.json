@@ -1,11 +1,13 @@
 {
   "PageError": "PageError",
   "about": "about",
+  "authForm": "authForm",
   "language": "language",
   "main": "main",
   "pageNotFound": "pageNotFound",
   "password": "password",
   "reloadPage": "reloadPage",
   "signIn": "signIn",
+  "signOut": "signOut",
   "username": "username"
 }

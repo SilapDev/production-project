@@ -26,5 +26,5 @@
     "./src/**/*.tsx",
     "./src/**/*.ts",
     "./.eslintrc.js"
-  ]
+, "src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tss"  ]
 }

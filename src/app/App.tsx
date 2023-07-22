@@ -1,13 +1,19 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { useTheme } from './providers/ThemeProvider'
 import { AppRouter } from './providers/router'
 import { Sidebar } from 'widgets/sidebar'
 
 import { Navbar } from 'widgets/navbar'
-import { Counter } from 'entities/Counter'
+import { useDispatch } from 'react-redux'
+import { userActions } from 'entities/User'
 
 export const App = () => {
   const { theme } = useTheme()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(userActions.initAuthData())
+  }, [dispatch])
 
   return (
       <div className={`app ${theme!}`}>
