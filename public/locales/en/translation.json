@@ -8,5 +8,6 @@
   "username": "Username",
   "password": "Password",
   "authForm": "Authorization form",
-  "signOut": "Sign Out"
+  "signOut": "Sign Out",
+  "profilePage": "Profile page"
 }

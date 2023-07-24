@@ -6,6 +6,7 @@
   "main": "main",
   "pageNotFound": "pageNotFound",
   "password": "password",
+  "profilePage": "profilePage",
   "reloadPage": "reloadPage",
   "signIn": "signIn",
   "signOut": "signOut",

@@ -1,22 +1,27 @@
-import React, { useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Sidebar.module.scss'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
 import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button'
-import { Applink, ApplinkTheme } from 'shared/ui/AppLink/Applink'
-import AboutIcon from 'shared/assets/icons/about-20-20.svg'
-import MainIcon from 'shared/assets/icons/main-20-20.svg'
+import { SidebarItemList } from 'widgets/sidebar/model/item'
+import { SidebarItem } from '../SidebarItem/SidebarItem'
 
 interface SidebarProps {
   className?: string
 }
-export const Sidebar = ({ className }: SidebarProps) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false)
 
   const onToggle = () => {
     setCollapsed((prev) => !prev)
   }
+
+  const itemList = useMemo(() => {
+    return SidebarItemList.map((item) => (
+        <SidebarItem item={item} key={item.path} collapsed={collapsed} />
+    ))
+  }, [collapsed])
 
   return (
       <div
@@ -35,21 +40,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
               {collapsed ? '>' : '<'}
           </Button>
           <div className={cls.items}>
-              <div className={cls.item}>
-                  <Applink theme={ApplinkTheme.SECONDARY} to={'/'}>
-                      <MainIcon className={cls.icon} />
-                      <span className={cls.link} >Главная</span>
-                  </Applink>
-              </div>
-              <div className={cls.item}>
-                  <Applink
-                    theme={ApplinkTheme.SECONDARY}
-                    to={'/about'}
-                    >
-                      <AboutIcon className={cls.icon} />
-                      <span className={cls.link} >О сайте</span>
-                  </Applink>
-              </div>
+              {itemList}
           </div>
           <div className={cls.switchers}>
               <ThemeSwitcher />
@@ -57,4 +48,4 @@ export const Sidebar = ({ className }: SidebarProps) => {
           </div>
       </div>
   )
-}
+})
