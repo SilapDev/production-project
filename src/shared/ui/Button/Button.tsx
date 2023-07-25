@@ -1,5 +1,5 @@
 import { type ButtonHTMLAttributes, type FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { type Mods, classNames } from 'shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 
 export enum ThemeButton {
@@ -26,22 +26,23 @@ export const Button: FC<ButtonProps> = (props) => {
   const {
     className = '',
     children,
-    theme,
+    theme = ThemeButton.OUTLINE,
     square,
-    size,
+    size = ButtonSize.M,
     disabled,
     ...other
   } = props
 
-  const mods: Record<string, boolean> = {
-    [cls.square]: square!,
-    [cls[size!]]: true,
-    [cls.disabled]: disabled!
+  const mods: Mods = {
+    [cls[theme]]: true,
+    [cls.square]: square,
+    [cls[size]]: true,
+    [cls.disabled]: disabled
   }
 
   return (
       <button
-      className={classNames(cls.Button, mods, [className, cls[theme!]])}
+      className={classNames(cls.Button, mods, [className])}
       disabled={disabled}
       {...other}
     >

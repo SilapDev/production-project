@@ -7,8 +7,11 @@
   "pageNotFound": "pageNotFound",
   "password": "password",
   "profilePage": "profilePage",
+  "redact": "redact",
   "reloadPage": "reloadPage",
   "signIn": "signIn",
   "signOut": "signOut",
-  "username": "username"
+  "username": "username",
+  "yourLastName": "yourLastName",
+  "yourName": "yourName"
 }

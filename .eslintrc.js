@@ -28,7 +28,8 @@ module.exports = {
     "react-hooks/exhaustive-deps": "error",
     "react/display-name": "off",
     "@typescript-eslint/await-thenable": "off",
-    "@typescript-eslint/no-misused-promises": "off"
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/prefer-nullish-coalescing" : "off"
   },
   globals: {
     "__IS_DEV__": true

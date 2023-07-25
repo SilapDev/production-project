@@ -9,5 +9,8 @@
   "password": "Password",
   "authForm": "Authorization form",
   "signOut": "Sign Out",
-  "profilePage": "Profile page"
+  "profilePage": "Profile page",
+  "redact": "Redacting",
+  "yourName": "Your name",
+  "yourLastName": "Your lastname"
 }
