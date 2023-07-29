@@ -13,5 +13,7 @@
   "signOut": "signOut",
   "username": "username",
   "yourLastName": "yourLastName",
-  "yourName": "yourName"
+  "yourName": "yourName",
+  "Отменить": "Отменить",
+  "Сохранить": "Сохранить"
 }

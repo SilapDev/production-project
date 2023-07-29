@@ -1,10 +1,16 @@
 import React from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { type Mods, classNames } from 'shared/lib/classNames/classNames'
 import cls from './Text.module.scss'
 
 export enum TextTheme {
   PRIMARY = 'primary',
-  ERROR = 'error'
+  ERROR = 'error',
+}
+
+export enum TextAling {
+  RIGHT = 'right',
+  LEFT = 'left',
+  CENTER = 'center',
 }
 
 interface TextProps {
@@ -12,14 +18,25 @@ interface TextProps {
   title?: string
   text?: string
   theme?: TextTheme
+  align?: TextAling
 }
 export const Text = (props: TextProps) => {
-  const { className = '', title, text, theme = TextTheme.PRIMARY } = props
+  const {
+    className = '',
+    title,
+    text,
+    theme = TextTheme.PRIMARY,
+    align = TextAling.LEFT
+  } = props
+
+  const mods: Mods = {
+    [cls[align]]: true
+  }
 
   return (
-      <div className={classNames(cls.Text, {}, [className, theme])} >
-          {title && <p className={cls.title} >{title}</p>}
-          {text && <p className={cls.text} >{text}</p>}
+      <div className={classNames(cls.Text, mods, [className, theme])}>
+          {title && <p className={cls.title}>{title}</p>}
+          {text && <p className={cls.text}>{text}</p>}
       </div>
   )
 }
