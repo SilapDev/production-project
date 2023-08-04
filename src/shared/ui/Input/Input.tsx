@@ -3,13 +3,13 @@ import { type Mods, classNames } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 
 type HTMLInputProps = Omit<
-InputHTMLAttributes<HTMLInputElement>,
-'value' | 'onChange' | 'readOnly'
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readOnly'
 >
 
 interface InputProps extends HTMLInputProps {
   className?: string
-  value?: string
+  value?: string | number
   onChange?: (value: string) => void
   type: string
   placeholder?: string
@@ -63,30 +63,30 @@ export const Input = memo((props: InputProps) => {
   }
 
   return (
-      <div className={classNames(cls.InputWrapper, {}, [className])}>
-          {placeholder && (
-          <div className={cls.placeholder}>{`${placeholder}>`}</div>
-          )}
-          <div className={cls.caretWrapper}>
-              <input
-                ref={ref}
-                type={type}
-                value={value}
-                onChange={onChangeHandler}
-                className={cls.input}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                onSelect={onSelect}
-                readOnly={readOnly}
-                {...otherProps}
-                />
-              {isCaretVisible && (
-              <span
-                className={cls.caret}
-                    style={{ left: `${caretPosition * 9}px` }}
-                />
-              )}
-          </div>
+    <div className={classNames(cls.InputWrapper, {}, [className])}>
+      {placeholder && (
+        <div className={cls.placeholder}>{`${placeholder}>`}</div>
+      )}
+      <div className={cls.caretWrapper}>
+        <input
+          ref={ref}
+          type={type}
+          value={value}
+          onChange={onChangeHandler}
+          className={cls.input}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          onSelect={onSelect}
+          readOnly={readOnly}
+          {...otherProps}
+        />
+        {isCaretVisible && (
+          <span
+            className={cls.caret}
+            style={{ left: `${caretPosition * 9}px` }}
+          />
+        )}
       </div>
+    </div>
   )
 })

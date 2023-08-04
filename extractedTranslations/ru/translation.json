@@ -1,5 +1,9 @@
 {
+  "City": "City",
+  "Client name": "Client name",
   "PageError": "PageError",
+  "Url for Avatar": "Url for Avatar",
+  "Your age": "Your age",
   "about": "about",
   "authForm": "authForm",
   "language": "language",
@@ -12,6 +16,7 @@
   "signIn": "signIn",
   "signOut": "signOut",
   "username": "username",
+  "your age": "your age",
   "yourLastName": "yourLastName",
   "yourName": "yourName",
   "Отменить": "Отменить",
