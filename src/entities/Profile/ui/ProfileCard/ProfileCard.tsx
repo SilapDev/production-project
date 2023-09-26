@@ -7,8 +7,10 @@ import { Input } from 'shared/ui/Input/Input'
 import { type Profile } from 'entities/Profile/model/types/profile'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
-import { Select } from 'shared/ui/Select/Select'
-import { Currency } from 'shared/const/common'
+import { Currency } from 'entities/Currency/model/types/currency'
+import { CurrencySelect } from 'entities/Currency'
+import { CountrySelect } from 'entities/Country/ui/CountrySelect/CountrySelect'
+import { Country } from 'entities/Country/model/types/Country'
 
 interface ProfileCardProps {
   className?: string
@@ -21,6 +23,8 @@ interface ProfileCardProps {
   onChangeCity?: (value: string) => void
   onChangeUsername?: (value: string) => void
   onChangeAvatar?: (value: string) => void
+  onChangeCurrency?: (currency: Currency) => void
+  onChangeCountry?: (country: Country) => void
   readOnly: boolean
 }
 export const ProfileCard = ({
@@ -34,6 +38,8 @@ export const ProfileCard = ({
   onChangeCity,
   onChangeAvatar,
   onChangeUsername,
+  onChangeCurrency,
+  onChangeCountry,
   readOnly
 }: ProfileCardProps) => {
   const { t } = useTranslation()
@@ -122,11 +128,18 @@ export const ProfileCard = ({
           readOnly={readOnly}
         />
 
-        <Select label={"Choose corrency"} options={[
-          { value: Currency.RUB, content: Currency.RUB },
-          { value: Currency.EUR, content: Currency.EUR },
-          { value: Currency.USD, content: Currency.USD },
-        ]} />
+        <CurrencySelect
+          className={cls.input}
+          value={data?.currency}
+          onChange={onChangeCurrency}
+          readonly={readOnly}
+        />
+        <CountrySelect
+          className={cls.input}
+          value={data?.country}
+          onChange={onChangeCountry}
+          readonly={readOnly}
+        />
 
       </div>
     </div>

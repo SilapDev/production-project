@@ -11,11 +11,15 @@ import {
   getProfileIsLoading,
   getProfileReadonly,
   profileActions,
-  profileReducer
+  profileReducer,
+  getProfileValidateError
 } from 'entities/Profile'
 import { useAppDispatch } from 'shared/lib/hook/useAppDispatch'
 import { useSelector } from 'react-redux'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
+import { Currency } from 'entities/Currency'
+import { Country } from 'entities/Country/model/types/Country'
+import { Text, TextTheme } from 'shared/ui/Text/Text'
 
 const reducers: ReducerList = {
   profile: profileReducer
@@ -31,6 +35,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   const isLoading = useSelector(getProfileIsLoading)
   const error = useSelector(getProfileError)
   const readOnly = useSelector(getProfileReadonly)
+  const validateErrors = useSelector(getProfileValidateError)
 
   useEffect(() => {
     dispatch(fetchProfiledata())
@@ -75,10 +80,25 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     },
     [dispatch]
   )
+  const onChangeCurrency = useCallback(
+    (currency: Currency) => {
+      dispatch(profileActions.updateProfile({ currency }))
+    },
+    [dispatch]
+  )
+  const onChangeCountry = useCallback(
+    (country: Country) => {
+      dispatch(profileActions.updateProfile({ country }))
+    },
+    [dispatch]
+  )
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <ProfilePageHeader />
+      {validateErrors?.length && validateErrors.map(err => (
+        <Text theme={TextTheme.ERROR} text={err} />
+      ))}
       <ProfileCard
         data={formData}
         isLoading={isLoading}
@@ -89,6 +109,8 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         onChangeCity={onChangeCity}
         onChangeAvatar={onChangeAvatar}
         onChangeUsername={onChangeUsername}
+        onChangeCurrency={onChangeCurrency}
+        onChangeCountry={onChangeCountry}
         readOnly={readOnly}
       />
     </DynamicModuleLoader>
